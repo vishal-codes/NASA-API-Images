@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NASA API Images</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+</head>
+
+<body>
+  <!-- Loader -->
+  <div class="loader hidden">
+    <img src="nasa-logo.gif" alt="NASA" />
+  </div>
+
+  <!-- Container -->
+  <div class="container">
+    <!-- Navigation -->
+    <div class="navigation-container">
+      <span class="background"></span>
+
+      <!-- Results Nav -->
+      <span class="navigation-items" id="resultsNav">
+        <h3 class="clickable" onclick="updateDOM('favorites')">Favorites</h3>
+        &nbsp;&nbsp;&nbsp;
+        <div>
+          <label>
+            <input type="checkbox" id="toggle-check" />
+          </label>
+          <label for="toggle-check">
+            <span id="toggle-icon" title="toggle-theme">
+              <h3>
+                <img id="theme-img" src="sun.svg" style="width: 25px; height: 25px; cursor: pointer"
+                  alt="toggle-theme" />
+              </h3>
+            </span>
+          </label>
+        </div>
+        &nbsp;&nbsp;&nbsp;
+        <h3 class="clickable" onclick="getNasaImages()">More Images</h3>
+      </span>
+
+      <!-- Favorites Nav -->
+      <sapn class="navigation-items hidden" id="favoritesNav">
+        <h3 class="clickable" onclick="getNasaImages()">HOME🏠</h3>
+      </sapn>
+    </div>
+
+    <!-- Images Container -->
+    <div class="images-container"></div>
+  </div>
+
+  <!-- Save Confirmation -->
+  <div class="save-confirmed" hidden>
+    <h1>ADDED!</h1>
+  </div>
+
+  <!-- Bragging -->
+  <div class="me">
+    <p>
+      Made by<a class="me" href="https://being-vishal.github.io/vishals-website/">Vishal Shinde.</a>
+    </p>
+  </div>
+
+  <!-- GO TO TOP BUTTON -->
+  <button onclick="topFunction()" id="myBtn" title="Go to top">
+    <strong>^</strong>
+  </button>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+
+</html>
