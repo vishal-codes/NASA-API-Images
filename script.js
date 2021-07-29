@@ -4,6 +4,7 @@ const favoritesNav = document.getElementById('favoritesNav');
 const imagesContainer = document.querySelector('.images-container');
 const saveConfirmed = document.querySelector('.save-confirmed');
 const loader = document.querySelector('.loader');
+const noFavorites = document.querySelector('.noFavorites');
 var flag = 0;
 
 // NASA Images API
@@ -30,7 +31,11 @@ function showContent(page) {
   
 
 function createDOMNodes(page){
-
+    if(page === 'favorites'  && Object.keys(favorites).length === 0){
+        noFavorites.classList.remove('hidden');
+    }else{
+        noFavorites.classList.add('hidden');
+    }
     const currentArray = page === 'results' ? resultsArray :Object.values(favorites);
     
     currentArray.forEach((result) => {
@@ -113,7 +118,6 @@ function createDOMNodes(page){
         link.appendChild(image);
         card.append(link,cardBody);
         imagesContainer.appendChild(card);
-
     });
 }
 
