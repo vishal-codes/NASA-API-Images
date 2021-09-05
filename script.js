@@ -1,5 +1,5 @@
 //jshint esversion:8
-const resultNav = document.getElementById('resultsNav');
+const resultsNav = document.getElementById('resultsNav');
 const favoritesNav = document.getElementById('favoritesNav');
 const imagesContainer = document.querySelector('.images-container');
 const saveConfirmed = document.querySelector('.save-confirmed');
@@ -15,7 +15,6 @@ const apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&count=${co
 let resultsArray = [];
 let favorites = {};      //favorites object
 
-
 // Scroll To Top, Remove Loader, Show Content
 function showContent(page) {
     window.scrollTo({ top: 0, behavior: 'instant' });
@@ -29,7 +28,6 @@ function showContent(page) {
     }
   }
   
-
 function createDOMNodes(page){
     if(page === 'favorites'  && Object.keys(favorites).length === 0){
         noFavorites.classList.remove('hidden');
@@ -131,8 +129,7 @@ function updateDOM(page){
     showContent(page);
 }
 
-
-//getting 11 images from api, display loader
+//getting 6 images from api, display loader
 async function getNasaImages(){
     mybutton.style.display = "none";
     loader.classList.remove('hidden');
@@ -204,6 +201,7 @@ if(currentTheme){
         theme_img.src = 'moon.svg';
     }
 }
+
 
 // GO TO TOP BUTTON
 //Get the button:
